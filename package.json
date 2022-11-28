@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "webpack serve --config ./config/webpack.config.dev.js",
     "watch": "webpack --watch",
-    "build": "webpack --config ./config/webpack.config.prod.js"
+    "build": "webpack --config ./config/webpack.config.prod.js",
+    "analyzer": "webpack --config ./config/webpack.config.prod.js"
   },
   "keywords": [],
   "author": "",

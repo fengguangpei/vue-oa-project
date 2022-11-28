@@ -35,7 +35,7 @@ module.exports = merge(base, {
       filename: './css/[name].[contenthash:8].css'
     }),
     new WebpackManifestPlugin(),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
     ElementPlus()
   ],
   optimization: {
