@@ -1,7 +1,7 @@
 <template>
   <div ref="container" class="micro-app">
     <el-icon class="is-loading">
-      <Loading />
+      <IEpLoading />
     </el-icon>
   </div>
 </template>
