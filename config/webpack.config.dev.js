@@ -8,6 +8,7 @@ module.exports = merge(base, {
     hot: true,
     open: true,
     port: 8080,
+    historyApiFallback: true,
     static: './dist'
   },
   module: {

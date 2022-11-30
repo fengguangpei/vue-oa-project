@@ -57,7 +57,7 @@
         >
           <template #suffix>
             <el-icon class="oa-fz-18 oa-pointer">
-              <Search />
+              <IEpSearch />
             </el-icon>
           </template>
         </el-input>
