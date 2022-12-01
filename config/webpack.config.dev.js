@@ -6,9 +6,10 @@ module.exports = merge(base, {
   devtool: 'source-map',
   devServer: {
     hot: true,
-    open: true,
+    open: false,
     port: 8080,
     historyApiFallback: true,
+    compress: true,
     static: './dist'
   },
   module: {

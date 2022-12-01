@@ -6,7 +6,7 @@ const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const ElementPlus = require('unplugin-element-plus/webpack')
-module.exports = merge(base, {
+module.exports = (env, argv) => merge(base, {
   target: 'web',
   mode: 'production',
   module: {
@@ -35,7 +35,7 @@ module.exports = merge(base, {
       filename: './css/[name].[contenthash:8].css'
     }),
     new WebpackManifestPlugin(),
-    // new BundleAnalyzerPlugin(),
+    ...(env.analyzer ? [new BundleAnalyzerPlugin()] : []),
     ElementPlus()
   ],
   optimization: {
@@ -77,5 +77,8 @@ module.exports = merge(base, {
       `...`,
       new CssMinimizerPlugin()
     ]
+  },
+  performance: {
+    hints: false
   }
 })

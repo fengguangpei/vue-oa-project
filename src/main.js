@@ -8,6 +8,7 @@ import './assets/scss/base.scss'
 import 'xe-utils'
 import { VXETable, Column, Table } from 'vxe-table'
 import globalProperties from './assets/js/globalProperties.js'
+import microApp from '@micro-zoe/micro-app'
 const app = createApp(App)
 // pinia
 const pinia = createPinia()
@@ -24,3 +25,4 @@ Object.entries(globalProperties).forEach(([key, value]) => {
 })
 app.use(router).use(pinia).use(useTable).mount('#app')
 app.component(RefreshPage)
+microApp.start()

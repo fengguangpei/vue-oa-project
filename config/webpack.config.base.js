@@ -90,5 +90,8 @@ module.exports = {
     Icons({
       autoInstall: true
     })
-  ]
+  ],
+  stats: {
+    builtAt: true
+  }
 }
