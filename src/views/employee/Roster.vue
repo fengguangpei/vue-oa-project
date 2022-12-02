@@ -102,11 +102,7 @@
           :border="true"
           round
         >
-          <vxe-table-column
-            type="checkbox"
-            width="46px"
-            align="center"
-          ></vxe-table-column>
+          <vxe-table-column type="checkbox" width="46px" align="center"></vxe-table-column>
           <vxe-table-column field="avatar" title="头像"></vxe-table-column>
           <vxe-table-column field="username" title="姓名"></vxe-table-column>
           <vxe-table-column field="job_umber" title="工号"></vxe-table-column>
@@ -114,18 +110,9 @@
           <vxe-table-column field="phone" title="手机号码"></vxe-table-column>
           <vxe-table-column field="position" title="职位"></vxe-table-column>
           <vxe-table-column field="type" title="类型"></vxe-table-column>
-          <vxe-table-column
-            field="certificate"
-            title="证件类型"
-          ></vxe-table-column>
-          <vxe-table-column
-            field="certificate_code"
-            title="证件号码"
-          ></vxe-table-column>
-          <vxe-table-column
-            field="join_date"
-            title="入职日期"
-          ></vxe-table-column>
+          <vxe-table-column field="certificate" title="证件类型"></vxe-table-column>
+          <vxe-table-column field="certificate_code" title="证件号码"></vxe-table-column>
+          <vxe-table-column field="join_date" title="入职日期"></vxe-table-column>
         </vxe-table>
       </div>
       <div class="pagination-box">

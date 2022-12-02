@@ -30,11 +30,7 @@
             parentField: 'parentCode'
           }"
         >
-          <vxe-table-column
-            type="checkbox"
-            width="46px"
-            align="center"
-          ></vxe-table-column>
+          <vxe-table-column type="checkbox" width="46px" align="center"></vxe-table-column>
           <vxe-table-column field="name" title="组织名称" tree-node>
             <template #default="{ row }">
               <el-icon>
@@ -49,9 +45,7 @@
           <vxe-table-column field="number" title="员工数"></vxe-table-column>
           <vxe-table-column field="status" title="状态">
             <template #default="{ row }">
-              <span
-                :class="[row.status ? 'oa-success-color' : 'oa-danger-color']"
-              >
+              <span :class="[row.status ? 'oa-success-color' : 'oa-danger-color']">
                 {{ row.status ? '启用' : '禁用' }}
               </span>
             </template>
@@ -65,9 +59,7 @@
                   <el-dropdown-menu>
                     <el-dropdown-item>添 加</el-dropdown-item>
                     <el-dropdown-item>删 除</el-dropdown-item>
-                    <el-dropdown-item v-if="!row.status"
-                      >开 启</el-dropdown-item
-                    >
+                    <el-dropdown-item v-if="!row.status">开 启</el-dropdown-item>
                     <el-dropdown-item v-if="row.status">禁 用</el-dropdown-item>
                     <el-dropdown-item>操作日志</el-dropdown-item>
                   </el-dropdown-menu>

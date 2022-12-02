@@ -1,4 +1,4 @@
 {
-  "*.{js,ts,vue}": "eslint",
-  "*.{vue,css}": "stylelint"
+  "*.{js,ts,vue}": "prettier",
+  "*.{vue,css}": "prettier"
 }
