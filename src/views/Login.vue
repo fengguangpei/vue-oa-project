@@ -90,53 +90,64 @@ const login = async () => {
     border-radius: 16px;
     display: flex;
     justify-content: center;
+
     &-inner {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 335px;
+
       img {
         margin-top: 40px;
         width: 88px;
         height: 88px;
       }
+
       .tip1 {
         font-size: 30px;
         font-weight: 500px;
       }
+
       .tip2 {
         font-size: 16px;
         color: #999;
         margin-top: 4px;
       }
+
       :deep .el-form {
         width: 335px;
         margin-top: 40px;
         margin-bottom: 10px;
+
         .el-input__inner {
           height: 40px;
         }
       }
+
       :deep .policy {
         width: 100%;
         display: flex;
         align-items: center;
         color: #c9c9c9;
         font-size: 14px;
+
         .el-checkbox {
           height: 14px;
           margin-right: 4px;
         }
+
         & > span {
-          color: rgba(37, 97, 239, 1);
+          color: rgb(37 97 239 / 100%);
         }
       }
+
       .el-button {
         width: 100%;
         margin-top: 10px;
         height: 44px;
-        background-color: rgba(37, 97, 239, 1);
+        background-color: rgb(37 97 239 / 100%);
       }
+
       .tip3 {
         color: #c9c9c9;
         font-size: 14px;

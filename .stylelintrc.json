@@ -1,6 +1,12 @@
 {
-  "extends": ["stylelint-config-recommended-vue", "stylelint-config-prettier"],
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recommended-vue/scss",
+    "stylelint-config-prettier"
+  ],
   "rules": {
-    "property-no-unknown": true
+    "property-no-unknown": true,
+    "no-descending-specificity": null,
+    "selector-class-pattern": "*"
   }
 }
