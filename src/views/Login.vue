@@ -14,11 +14,7 @@
             ></el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input
-              v-model="formData.password"
-              placeholder="请输入密码"
-              clearable
-            ></el-input>
+            <el-input v-model="formData.password" placeholder="请输入密码" clearable></el-input>
           </el-form-item>
         </el-form>
         <div class="policy">
@@ -86,6 +82,7 @@ const login = async () => {
   display: flex;
   justify-content: center;
   align-items: center;
+
   .form {
     width: 440px;
     height: 600px;

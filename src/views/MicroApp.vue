@@ -8,7 +8,4 @@
 
 <script setup></script>
 
-<style scoped lang="scss">
-.micro-app {
-}
-</style>
+<style scoped></style>
