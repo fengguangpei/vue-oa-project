@@ -4,10 +4,14 @@
       <div class="box" :class="item.class" @click="changeTab(item.name)">
         <div class="tabItem" :class="item.class">
           {{ item.text }}
-          <el-icon class="close" @click.prevent.stop="closeTab(item.name, $router)" v-if="item.name !== 'HomePage'">
+          <el-icon
+            v-if="item.name !== 'HomePage'"
+            class="close"
+            @click.prevent.stop="closeTab(item.name, $router)"
+          >
             <IEpClose />
           </el-icon>
-          <i class="iconfont icon-vertical_line line" v-if="item.line"></i>
+          <i v-if="item.line" class="iconfont icon-vertical_line line"></i>
         </div>
       </div>
       <div class="white"></div>
@@ -16,96 +20,100 @@
 </template>
 
 <script setup>
-  import { storeToRefs } from 'pinia'
-  import { useTabsStore } from '../stores/tabs.js'
-  
-  const tabsInstance = useTabsStore()
-  const { changeTab, closeTab } = tabsInstance
-  const { statusTabs } = storeToRefs(tabsInstance)
+import { storeToRefs } from 'pinia'
+import { useTabsStore } from '../stores/tabs.js'
+
+const tabsInstance = useTabsStore()
+const { changeTab, closeTab } = tabsInstance
+const { statusTabs } = storeToRefs(tabsInstance)
 </script>
 
 <style lang="scss" scoped>
-  $positions: ("active": 6px 6px 0 0px, "activeLeft": 0 0 6px 0, "activeRight": 0 0 0 6px);
-  @each $p, $value in $positions {
-    .#{$p} {
-      border-radius: $value
-    }
+$positions: (
+  'active': 6px 6px 0 0px,
+  'activeLeft': 0 0 6px 0,
+  'activeRight': 0 0 0 6px
+);
+@each $p, $value in $positions {
+  .#{$p} {
+    border-radius: $value;
   }
-  .tabs {
+}
+.tabs {
+  background-color: #252c38;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 38px;
+  padding-top: 6px;
+  z-index: 9997;
+  a {
+    text-decoration: none;
+  }
+  .preLine {
+    height: 100%;
+    width: 12px;
+    background-color: #eef0f5;
+  }
+  .box {
+    background-image: linear-gradient(#eef0f5, #fff);
+    position: relative;
+  }
+  .tabItem {
     background-color: #252c38;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    height: 38px;
-    padding-top: 6px;
-    z-index: 9997;
-    a {
-      text-decoration: none;
+    height: 36px;
+    font-size: 12px;
+    display: block;
+    line-height: 36px;
+    color: hsla(0, 0%, 100%, 0.8);
+    cursor: pointer;
+    min-width: 120px;
+    padding: 0 25px 0 16px;
+    box-sizing: border-box;
+    user-select: none;
+    text-align: left;
+    white-space: nowrap;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    .close {
+      visibility: hidden;
+      font-size: 16px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: hsla(0, 0%, 100%, 0.6);
+      background: hsla(0, 0%, 100%, 0.16);
+      border-radius: 50%;
+      svg {
+        width: 12px;
+        height: 12px;
+      }
     }
-    .preLine {
-      height: 100%;
-      width: 12px;
-      background-color: #eef0f5;
-    }
-    .box {
-      background-image: linear-gradient(#eef0f5, #fff);
-      position: relative;
-    }
-    .tabItem {
-      background-color: #252c38;
-      height: 36px;
-      font-size: 12px;
-      display: block;
-      line-height: 36px;
-      color: hsla(0, 0%, 100%, .8);
-      cursor: pointer;
-      min-width: 120px;
-      padding: 0 25px 0 16px;
-      box-sizing: border-box;
-      user-select: none;
-      text-align: left;
-      white-space: nowrap;
-      max-width: 130px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      position: relative;
+    &:hover {
       .close {
-        visibility: hidden;
-        font-size: 16px;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        color: hsla(0, 0%, 100%, .6);
-        background: hsla(0, 0%, 100%, .16);
-        border-radius: 50%;
-        svg {
-          width: 12px;
-          height: 12px;
-        }
-      }
-      &:hover {
-        .close {
-          visibility: visible;
-        }
-      }
-      .line {
-        position: absolute;
-        right: -6px;
-        font-size: 18px;
-        color: hsla(0, 0%, 100%, .4);
-      }
-    }
-    .activedItem {
-      color: #333;
-      background-color: #fff;
-      border-radius: 6px 6px 0 0;
-      .close {
-        color: #333;
         visibility: visible;
-        &:hover {
-          background-color: #f0f2f5
-        }
+      }
+    }
+    .line {
+      position: absolute;
+      right: -6px;
+      font-size: 18px;
+      color: hsla(0, 0%, 100%, 0.4);
+    }
+  }
+  .activedItem {
+    color: #333;
+    background-color: #fff;
+    border-radius: 6px 6px 0 0;
+    .close {
+      color: #333;
+      visibility: visible;
+      &:hover {
+        background-color: #f0f2f5;
       }
     }
   }
+}
 </style>

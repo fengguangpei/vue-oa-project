@@ -1,6 +1,8 @@
 const { merge } = require('webpack-merge')
 const webpack = require('webpack')
 const base = require('./webpack.config.base.js')
+const EslintWebpackPlugin = require('eslint-webpack-plugin')
+const path = require('path')
 module.exports = merge(base, {
   mode: 'development',
   devtool: 'source-map',
@@ -25,6 +27,9 @@ module.exports = merge(base, {
     ]
   },
   plugins: [
-    new webpack.ProgressPlugin()
+    new webpack.ProgressPlugin(),
+    new EslintWebpackPlugin({
+      context: path.resolve(__dirname, '../src')
+    })
   ]
 })

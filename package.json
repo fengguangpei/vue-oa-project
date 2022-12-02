@@ -12,7 +12,8 @@
     "dev": "webpack serve --config ./config/webpack.config.dev.js",
     "watch": "webpack --watch",
     "build": "webpack --config ./config/webpack.config.prod.js",
-    "analyzer": "webpack --config ./config/webpack.config.prod.js --env analyzer"
+    "analyzer": "webpack --config ./config/webpack.config.prod.js --env analyzer",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -20,19 +21,31 @@
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.19.6",
     "@iconify-json/ep": "^1.1.8",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@vue/compiler-sfc": "^3.2.45",
     "autoprefixer": "^10.4.13",
     "babel-plugin-import": "^1.13.5",
     "css-loader": "^6.7.2",
     "css-minimizer-webpack-plugin": "^4.2.2",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.8.0",
+    "eslint-webpack-plugin": "^3.2.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.4",
     "mini-css-extract-plugin": "^2.7.0",
     "node-sass": "^8.0.0",
     "postcss-loader": "^7.0.1",
+    "prettier": "^2.8.0",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
+    "stylelint": "^14.15.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-recommended-vue": "^1.4.0",
     "unplugin-auto-import": "^0.12.0",
     "unplugin-element-plus": "^0.4.1",
     "unplugin-icons": "^0.14.14",
@@ -58,5 +71,9 @@
     "vue-router": "^4.1.6",
     "vxe-table": "^4.3.6",
     "xe-utils": "^3.5.7"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.css": "stylelint --fix"
   }
 }

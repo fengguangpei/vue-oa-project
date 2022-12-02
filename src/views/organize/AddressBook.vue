@@ -1,6 +1,6 @@
 <script setup>
-  import { ref } from 'vue'
-  const name = ref('AddressBook')
+import { ref } from 'vue'
+const name = ref('AddressBook')
 </script>
 
 <template>
@@ -10,6 +10,4 @@
   </div>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

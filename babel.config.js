@@ -1,9 +1,9 @@
 module.exports = {
   plugins: [
     [
-      "import",
+      'import',
       {
-        libraryName: "vxe-table",
+        libraryName: 'vxe-table',
         style: true
       }
     ]

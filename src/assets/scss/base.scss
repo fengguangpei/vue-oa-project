@@ -124,7 +124,7 @@
             &:after {
               display: block;
               position: absolute;
-              content: " ";
+              content: ' ';
               top: 50%;
               transform: translateY(-6px);
               right: 0;
@@ -160,5 +160,5 @@
 }
 :root {
   --el-color-primary: #2561ef;
-  --el-color-primary-light-3: rgb(37, 97, 239, .8);
+  --el-color-primary-light-3: rgb(37, 97, 239, 0.8);
 }

@@ -1,7 +1,7 @@
-import Frame from "../views/Frame.vue"
+import Frame from '../views/Frame.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { route } from './routes.js'
-import { useTabsStore } from "../stores/tabs"
+import { useTabsStore } from '../stores/tabs'
 const routes = [
   {
     path: '/login',

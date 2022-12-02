@@ -69,8 +69,4 @@ const ranks = [
     name: 'p4'
   }
 ]
-export {
-  businesses,
-  apartments,
-  ranks
-}
+export { businesses, apartments, ranks }

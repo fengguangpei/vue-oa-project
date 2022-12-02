@@ -5,11 +5,11 @@
 </template>
 
 <script setup>
-  import EmployeeCard from '../components/homePage/EmployeeCard.vue'
+import EmployeeCard from '../components/homePage/EmployeeCard.vue'
 </script>
 
 <style scoped lang="scss">
-  .home-page {
-    margin: 20px;
-  }
+.home-page {
+  margin: 20px;
+}
 </style>

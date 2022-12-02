@@ -3,9 +3,9 @@ import { ref, reactive, computed } from 'vue'
 import { menus } from '../router/asides'
 const menuItems = Object.values(menus).flat()
 const asides = new Map()
-Object.entries(menus).forEach(item => {
+Object.entries(menus).forEach((item) => {
   const [key, arr] = item
-  arr.forEach(item => {
+  arr.forEach((item) => {
     asides.set(item.name, key)
   })
 })
@@ -30,14 +30,14 @@ export const useTabsStore = defineStore('tabs', () => {
   })
   // 携带状态的Tab
   const statusTabs = computed(() => {
-    const current = tabs.findIndex(item => item.name === activeName.value)
+    const current = tabs.findIndex((item) => item.name === activeName.value)
     return tabs.map((item, index) => {
       return {
         ...item,
         class: {
           activedItem: index === current,
           activedRight: index === current + 1,
-          activedLeft: index === current - 1,
+          activedLeft: index === current - 1
         },
         line: index !== current && index !== current - 1
       }
@@ -45,19 +45,21 @@ export const useTabsStore = defineStore('tabs', () => {
   })
   // 缓存Tab
   const keepAlive = computed(() => {
-    return tabs.map(item => item.keepAlive).filter(item => item !== excludeTab.value)
+    return tabs
+      .map((item) => item.keepAlive)
+      .filter((item) => item !== excludeTab.value)
   })
   // 切换
-  const changeTab = path => {
-    const item = tabs.find(item => item.path === path)
+  const changeTab = (path) => {
+    const item = tabs.find((item) => item.path === path)
     if (item) {
       activeName.value = item.name
     }
   }
   // 关闭
   const closeTab = (name, router) => {
-    let index = tabs.findIndex(item => item.name === name)
-    const current = tabs.findIndex(item => item.name === activeName.value)
+    let index = tabs.findIndex((item) => item.name === name)
+    const current = tabs.findIndex((item) => item.name === activeName.value)
     let tmp = index === tabs.length - 1 ? index - 1 : index
     tabs.splice(index, 1)
     if (current === index) {
@@ -70,9 +72,9 @@ export const useTabsStore = defineStore('tabs', () => {
   }
   // 新增
   const addTab = (path) => {
-    const menuItem = menuItems.find(item => item.path === path)
-    const index = tabs.findIndex(item => item.path === path)
-    index === -1 && tabs.push({...menuItem})
+    const menuItem = menuItems.find((item) => item.path === path)
+    const index = tabs.findIndex((item) => item.path === path)
+    index === -1 && tabs.push({ ...menuItem })
   }
   // 修改excludeTab
   const changeExcludeTab = (keepAlive) => {

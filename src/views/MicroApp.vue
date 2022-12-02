@@ -1,13 +1,14 @@
 <template>
-  <micro-app name="micro-app" url="http://localhost:8081" baseroute="/microApp/CarManage"></micro-app>
+  <micro-app
+    name="micro-app"
+    url="http://localhost:8081"
+    baseroute="/microApp/CarManage"
+  ></micro-app>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style scoped lang="scss">
 .micro-app {
- 
 }
 </style>

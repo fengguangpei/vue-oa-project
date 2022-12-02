@@ -13,11 +13,10 @@ export const useMenusStore = defineStore('menus', () => {
     const validate = Reflect.has(menus, focusTab.value)
     const menu = validate ? Reflect.get(menus, focusTab.value) : []
     const map = new Map()
-    menu.forEach(item => {
+    menu.forEach((item) => {
       if (map.has(item.group)) {
         map.get(item.group).children.push(item)
-      }
-      else {
+      } else {
         map.set(item.group, {
           text: item.group,
           children: [item]

@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue'
-  import zhCn from 'element-plus/es/locale/lang/zh-cn'
-  const locale = ref(zhCn)
+import { ref } from 'vue'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
+const locale = ref(zhCn)
 </script>

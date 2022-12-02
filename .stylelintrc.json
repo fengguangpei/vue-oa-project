@@ -1,0 +1,6 @@
+{
+  "extends": ["stylelint-config-recommended-vue", "stylelint-config-prettier"],
+  "rules": {
+    "property-no-unknown": true
+  }
+}

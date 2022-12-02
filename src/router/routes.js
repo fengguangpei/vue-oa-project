@@ -4,7 +4,7 @@ export const route = [
     text: '首页',
     parent: '',
     path: '/',
-    component: () => import("../views/HomePage.vue"),
+    component: () => import('../views/HomePage.vue')
   },
   {
     name: 'AddressBook',
