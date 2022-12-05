@@ -1,3 +1,3 @@
 # vue-oa-project
 
-# this is personal study project1
+# this is personal study project
