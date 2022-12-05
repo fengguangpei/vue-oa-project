@@ -54,21 +54,21 @@ export const menus = {
       name: 'CarManage',
       path: '/microApp/CarManage',
       group: '用车',
-      keepAlive: 'MicroApp'
+      keepAlive: 'MicroApplication'
     },
     {
       text: '用车记录',
       name: 'CarLog',
       path: '/microApp/CarLog',
       group: '用车',
-      keepAlive: 'MicroApp'
+      keepAlive: 'MicroApplication'
     },
     {
       text: '请求评论',
       name: 'RequestReview',
       path: '/microApp/RequestReview',
       group: '用车',
-      keepAlive: 'MicroApp'
+      keepAlive: 'MicroApplication'
     }
   ]
 }

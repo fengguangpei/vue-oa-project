@@ -64,21 +64,6 @@ $positions: (
     position: relative;
   }
 
-  .active-item {
-    color: #333;
-    background-color: #fff;
-    border-radius: 6px 6px 0 0;
-
-    .close {
-      color: #333;
-      visibility: visible;
-
-      &:hover {
-        background-color: #f0f2f5;
-      }
-    }
-  }
-
   .tab-item {
     background-color: #252c38;
     height: 36px;
@@ -125,6 +110,21 @@ $positions: (
       right: -6px;
       font-size: 18px;
       color: hsl(0deg 0% 100% / 40%);
+    }
+  }
+
+  .activedItem {
+    color: #333;
+    background-color: #fff;
+    border-radius: 6px 6px 0 0;
+
+    .close {
+      color: #333;
+      visibility: visible;
+
+      &:hover {
+        background-color: #f0f2f5;
+      }
     }
   }
 }

@@ -39,6 +39,6 @@ export const route = [
     text: '车辆管理',
     parent: 'Card',
     path: '/microApp/:all(.*)*',
-    component: () => import('../views/MicroApp.vue')
+    component: () => import('../views/MicroApplication.vue')
   }
 ]
