@@ -1,4 +1,4 @@
 {
-  "*.{js,ts,vue}": "prettier",
-  "*.{vue,css,scss}": "prettier"
+  "*.{js,ts,vue}": "prettier --fix",
+  "*.{vue,css}": "prettier --fix"
 }

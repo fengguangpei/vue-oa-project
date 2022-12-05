@@ -7,7 +7,6 @@
   "rules": {
     "property-no-unknown": true,
     "no-descending-specificity": null,
-    "selector-class-pattern": null,
-    "no-empty-source": null
+    "selector-class-pattern": "*"
   }
 }
