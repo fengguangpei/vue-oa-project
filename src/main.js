@@ -8,7 +8,7 @@ import './assets/scss/base.scss'
 import 'xe-utils'
 import { VXETable, Column, Table } from 'vxe-table'
 import globalProperties from './assets/js/globalProperties.js'
-import microApp from '@micro-zoe/micro-app'
+import { prefetchApps } from 'qiankun'
 const app = createApp(App)
 // pinia
 const pinia = createPinia()
@@ -25,24 +25,4 @@ Object.entries(globalProperties).forEach(([key, value]) => {
 })
 app.use(router).use(pinia).use(useTable).mount('#app')
 app.component(RefreshPage)
-microApp.start({
-  plugins: {
-    modules: {
-      micro_app: [
-        {
-          loader(code) {
-            if (code.indexOf('sockjs-node') > -1) {
-              code = code
-                .replace('window.location.port', '8081')
-                .replace(
-                  'window.location.hostname',
-                  '子应用host，如果和基座相同则不需要替换hostname'
-                )
-            }
-            return code
-          }
-        }
-      ]
-    }
-  }
-})
+prefetchApps([{ name: 'micro-app', entry: '//localhost:8081' }])

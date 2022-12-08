@@ -12,16 +12,7 @@ module.exports = merge(base, {
     port: 8080,
     historyApiFallback: true,
     compress: true,
-    static: './dist',
-    proxy: {
-      '/microApp': {
-        target: 'http://localhost:8081',
-        pathRewrite: {
-          '^/microApp': ''
-        },
-        secure: false
-      }
-    }
+    static: './dist'
   },
   module: {
     rules: [

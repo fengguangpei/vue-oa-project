@@ -5,8 +5,8 @@
     "stylelint-config-prettier"
   ],
   "rules": {
-    "property-no-unknown": true,
+    "property-no-unknown": null,
     "no-descending-specificity": null,
-    "selector-class-pattern": "*"
+    "selector-class-pattern": null
   }
 }

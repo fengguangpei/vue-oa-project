@@ -23,6 +23,7 @@ declare module '@vue/runtime-core' {
     ElSelect: typeof import('element-plus/es')['ElSelect']
     EmployeeCard: typeof import('./src/components/homePage/EmployeeCard.vue')['default']
     IEpClose: typeof import('~icons/ep/close')['default']
+    IEpHomeFilled: typeof import('~icons/ep/home-filled')['default']
     IEpSearch: typeof import('~icons/ep/search')['default']
     RefreshPage: typeof import('./src/components/RefreshPage.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

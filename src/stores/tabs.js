@@ -45,9 +45,7 @@ export const useTabsStore = defineStore('tabs', () => {
   })
   // 缓存Tab
   const keepAlive = computed(() => {
-    return tabs
-      .map((item) => item.keepAlive)
-      .filter((item) => item !== excludeTab.value)
+    return tabs.map((item) => item.keepAlive).filter((item) => item !== excludeTab.value)
   })
   // 切换
   const changeTab = (path) => {

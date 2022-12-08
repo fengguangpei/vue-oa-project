@@ -34,7 +34,7 @@
           <vxe-table-column field="name" title="组织名称" tree-node>
             <template #default="{ row }">
               <el-icon>
-                <HomeFilled class="oa-warning-color" />
+                <IEpHomeFilled class="oa-warning-color" />
               </el-icon>
               {{ row.name }}
             </template>
