@@ -1,5 +1,9 @@
 <template>
-  <el-button text icon="Refresh" @click="refresh"></el-button>
+  <el-button text size="mini" @click="refresh">
+    <el-icon>
+      <IEpRefresh></IEpRefresh>
+    </el-icon>
+  </el-button>
 </template>
 
 <script setup>
@@ -10,9 +14,11 @@ const refresh = useReshPage()
 <style scoped lang="scss">
 .el-button {
   margin-left: auto !important;
+
   &:hover {
-    background-color: rgba(11, 16, 25, 0.06) !important;
+    background-color: rgb(11 16 25 / 6%) !important;
   }
+
   font-size: 16px;
 }
 </style>

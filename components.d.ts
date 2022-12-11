@@ -24,6 +24,7 @@ declare module '@vue/runtime-core' {
     EmployeeCard: typeof import('./src/components/homePage/EmployeeCard.vue')['default']
     IEpClose: typeof import('~icons/ep/close')['default']
     IEpHomeFilled: typeof import('~icons/ep/home-filled')['default']
+    IEpRefresh: typeof import('~icons/ep/refresh')['default']
     IEpSearch: typeof import('~icons/ep/search')['default']
     RefreshPage: typeof import('./src/components/RefreshPage.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

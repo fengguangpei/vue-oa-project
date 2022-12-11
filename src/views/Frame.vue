@@ -42,6 +42,8 @@
             <component :is="Component"></component>
           </keep-alive>
         </router-view>
+        <!-- 微应用 -->
+        <div id="micro-app1" v-show="activeAside === 'Card'"></div>
       </div>
       <div class="mask" v-show="showMenu" @click.stop="changeMenu(false)"></div>
     </div>
@@ -67,38 +69,46 @@ const { focusTab, menu, aside, showMenu } = storeToRefs(menusInstance)
   height: 100vh;
   display: flex;
   position: relative;
+
   .aside {
     width: 56px;
     height: 100vh;
     background-color: #0b1019;
     z-index: 9999;
+
     img {
       width: 50px;
       height: 50px;
       margin-left: 3px;
     }
+
     &-item {
       width: 56px;
       height: 56px;
-      color: hsla(0, 0%, 100%, 0.54);
+      color: hsl(0deg 0% 100% / 54%);
       cursor: pointer;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       &:first-child {
         margin-top: 56px;
       }
+
       &:hover {
         color: #fff;
       }
+
       &__active {
-        background-color: hsla(0, 0%, 100%, 0.2);
+        background-color: hsl(0deg 0% 100% / 20%);
         color: #fff;
       }
+
       i {
         font-size: 18px;
       }
+
       span {
         font-size: 14px;
       }
@@ -108,25 +118,28 @@ const { focusTab, menu, aside, showMenu } = storeToRefs(menusInstance)
   .menu {
     position: absolute;
     background-color: #fff;
-    z-index: 40;
     padding-left: 56px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 100%;
     z-index: 9998;
+
     &-box {
       padding-top: 16px;
       background-color: #fff;
+
       a {
         text-decoration: none;
       }
+
       &__title {
         width: 180px;
         padding: 8px 16px;
         color: #888c94;
         font-size: 12px;
       }
+
       &__item {
         width: 180px;
         padding: 8px 16px 8px 32px;
@@ -134,10 +147,12 @@ const { focusTab, menu, aside, showMenu } = storeToRefs(menusInstance)
         font-size: 12px;
         cursor: pointer;
         border-radius: 4px;
+
         &:hover {
-          background: rgba(0, 91, 245, 0.06);
+          background: rgb(0 91 245 / 6%);
         }
       }
+
       &:last-child {
         flex: 1;
       }
@@ -165,8 +180,17 @@ const { focusTab, menu, aside, showMenu } = storeToRefs(menusInstance)
     flex-direction: column;
     position: relative;
     background: #f0f2f5;
+
     .body {
       height: calc(100% - 42px);
+
+      #micro-app1 {
+        height: 100%;
+
+        div {
+          height: 100%;
+        }
+      }
     }
   }
 
@@ -176,7 +200,7 @@ const { focusTab, menu, aside, showMenu } = storeToRefs(menusInstance)
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgb(0 0 0 / 25%);
     z-index: 20;
   }
 }

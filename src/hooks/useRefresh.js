@@ -20,7 +20,7 @@ function useReshPage() {
     changeExcludeTab(keepAlive)
     await $router.replace({ path: '/' })
     changeExcludeTab('')
-    $router.push({ path })
+    $router.replace({ path })
   }
 }
 export default useReshPage
