@@ -34,11 +34,11 @@ router.beforeEach((to, from, next) => {
     next()
     return
   }
+  next()
   const tabsInstance = useTabsStore()
   const { addTab, changeTab } = tabsInstance
   addTab(path)
   changeTab(path)
-  next()
 })
 /** 全局路由后置钩子 */
 router.afterEach((to) => {

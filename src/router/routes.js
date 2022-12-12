@@ -7,6 +7,11 @@ export const route = [
     component: () => import('../views/HomePage.vue')
   },
   {
+    name: 'RefreshPage',
+    path: '/RefreshPage',
+    component: () => import('../views/RefreshPage.vue')
+  },
+  {
     name: 'AddressBook',
     text: '通讯录',
     parent: 'Organization',
