@@ -1,6 +1,7 @@
 const base = require('./webpack.config.base.js');
 const { merge } = require('webpack-merge');
 const path = require('path');
+const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
@@ -36,7 +37,10 @@ module.exports = (env, argv) => merge(base, {
     }),
     new WebpackManifestPlugin(),
     ...(env.analyzer ? [new BundleAnalyzerPlugin()] : []),
-    ElementPlus()
+    ElementPlus(),
+    new webpack.DefinePlugin({
+      PRODUCTION: JSON.stringify(true)
+    })
   ],
   optimization: {
     splitChunks: {

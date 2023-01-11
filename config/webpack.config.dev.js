@@ -30,6 +30,9 @@ module.exports = merge(base, {
     new webpack.ProgressPlugin(),
     new EslintWebpackPlugin({
       context: path.resolve(__dirname, '../src')
+    }),
+    new webpack.DefinePlugin({
+      PRODUCTION: JSON.stringify(false)
     })
   ]
 })

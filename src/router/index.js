@@ -25,6 +25,7 @@ const router = createRouter({
   routes
 })
 router.onError((err) => {
+  // eslint-disable-next-line no-console
   console.error(err)
 })
 /** 全局路由前置钩子 */
@@ -59,9 +60,10 @@ async function initMicroApp() {
   }
   // 子应用初始化
   if (flag === null) {
+    const entry = PRODUCTION ? '/microApp' : '//localhost:8081'
     microApp = loadMicroApp({
       name: 'micro-app',
-      entry: '//localhost:8081',
+      entry,
       container: document.querySelector('#micro-app1')
     })
     await microApp.mountPromise

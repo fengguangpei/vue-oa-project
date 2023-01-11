@@ -171,7 +171,6 @@ const pagination = reactive({
   size: 20,
   currentPage: 1
 })
-console.log('beforeCreate')
 </script>
 
 <style scoped lang="scss"></style>

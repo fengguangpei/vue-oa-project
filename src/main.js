@@ -25,4 +25,5 @@ Object.entries(globalProperties).forEach(([key, value]) => {
 })
 app.use(router).use(pinia).use(useTable).mount('#app')
 app.component(RefreshPage)
-prefetchApps([{ name: 'micro-app', entry: '//localhost:8081' }])
+const microAppEntry = PRODUCTION ? '/microApp' : '//localhost:8081'
+prefetchApps([{ name: 'micro-app', entry: microAppEntry }])

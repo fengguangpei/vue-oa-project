@@ -160,9 +160,7 @@ const searchTypes = reactive([
 const reset = () => null
 // 表格
 const tableData = ref([])
-const getTableData = async () => {
-  console.log(pagination)
-}
+const getTableData = async () => {}
 // 分页
 const pagination = reactive({
   size: 20,
