@@ -23,7 +23,7 @@ module.exports = merge(base, {
       {
         test: /\.s[ac]ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
-      },
+      }
     ]
   },
   plugins: [
@@ -33,6 +33,10 @@ module.exports = merge(base, {
     }),
     new webpack.DefinePlugin({
       PRODUCTION: JSON.stringify(false)
+    }),
+    new webpack.DllReferencePlugin({
+      context: path.resolve(__dirname, '../'),
+      manifest: require('../vendor/Vendor_manifest.json')
     })
   ]
 })

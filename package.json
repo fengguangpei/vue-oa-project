@@ -13,7 +13,8 @@
     "watch": "webpack --watch",
     "build": "webpack --config ./config/webpack.config.prod.js",
     "analyzer": "webpack --config ./config/webpack.config.prod.js --env analyzer",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "vendor": "webpack --config ./config/webpack.config.vendor.js"
   },
   "keywords": [],
   "author": "",
