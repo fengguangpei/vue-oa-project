@@ -3,7 +3,10 @@ const webpack = require('webpack')
 const base = require('./webpack.config.base.js')
 const EslintWebpackPlugin = require('eslint-webpack-plugin')
 const path = require('path')
-module.exports = merge(base, {
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const SppedMeasurePlugin = require('speed-measure-webpack-plugin')
+const smp = new SppedMeasurePlugin()
+const config = merge(base, {
   mode: 'development',
   devtool: 'source-map',
   devServer: {
@@ -27,7 +30,7 @@ module.exports = merge(base, {
     ]
   },
   plugins: [
-    new webpack.ProgressPlugin(),
+    // new ProgressBarPlugin(),
     new EslintWebpackPlugin({
       context: path.resolve(__dirname, '../src')
     }),
@@ -40,3 +43,4 @@ module.exports = merge(base, {
     })
   ]
 })
+module.exports = config

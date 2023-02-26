@@ -19,7 +19,8 @@ module.exports = {
     alias: {
       "@src": path.resolve(__dirname, "../src")
     },
-    extensions: [".js", ".vue", ".scss", ".css"]
+    extensions: [".js", ".vue", ".scss", ".css"],
+    symlinks: false
   },
   module: {
     rules: [
@@ -29,21 +30,29 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            exclude: /node_modules/,
-            presets: [
-              [
-                '@babel/preset-env',
-                {
-                  modules: false
-                }
-              ]
-            ],
-            plugins: ['@babel/plugin-transform-runtime']
+        use: [
+          {
+            loader: 'thread-loader',
+            options: {
+              workerParallelJobs: 2
+            }
+          },
+          {
+            loader: 'babel-loader',
+            options: {
+              exclude: /node_modules/,
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    modules: false
+                  }
+                ]
+              ],
+              plugins: ['@babel/plugin-transform-runtime']
+            }
           }
-        }
+        ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,

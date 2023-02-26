@@ -7,6 +7,8 @@ const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const ElementPlus = require('unplugin-element-plus/webpack')
+const glob = require('glob')
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 module.exports = (env, argv) => merge(base, {
   target: 'web',
   mode: 'production',
