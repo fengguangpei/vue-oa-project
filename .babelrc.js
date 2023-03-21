@@ -13,14 +13,5 @@ module.exports = {
       }
     ]
   ],
-  plugins: [
-    '@babel/plugin-transform-runtime',
-    [
-      'import',
-      {
-        libraryName: 'vxe-table',
-        style: true
-      }
-    ]
-  ]
+  plugins: ['@babel/plugin-transform-runtime']
 }

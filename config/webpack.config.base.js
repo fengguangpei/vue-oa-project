@@ -8,6 +8,8 @@ const AutoImport = require('unplugin-auto-import/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 const Icons = require('unplugin-icons/webpack')
 const IconsResolver = require('unplugin-icons/resolver')
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
+
 module.exports = {
   entry: path.resolve(__dirname, '../src/main.js'),
   output: {
@@ -98,6 +100,40 @@ module.exports = {
     }),
     Icons({
       autoInstall: true
+    }),
+    new HtmlWebpackExternalsPlugin({
+      externals: [
+        {
+          module: 'vue',
+          entry: 'https://unpkg.com/vue@3.2.45/dist/vue.global.js',
+          global: 'Vue'
+        },
+        {
+          module: 'vue-router',
+          entry: 'https://unpkg.com/vue-router@4.1.6/dist/vue-router.global.js',
+          global: 'VueRouter'
+        },
+        {
+          module: 'vue-demi',
+          entry: 'https://cdnjs.cloudflare.com/ajax/libs/vue-demi/0.13.11/index.iife.js',
+          global: 'VueDemi'
+        },
+        {
+          module: 'pinia',
+          entry: 'https://cdnjs.cloudflare.com/ajax/libs/pinia/2.0.32/pinia.iife.js',
+          global: 'Pinia'
+        },
+        {
+          module: 'xe-utils',
+          entry: 'https://cdn.jsdelivr.net/npm/xe-utils@3.5.7/dist/xe-utils.umd.min.js',
+          global: 'XEUtils'
+        },
+        {
+          module: 'vxe-table',
+          entry: 'https://cdn.jsdelivr.net/npm/vxe-table@4.3.10/lib/index.umd.min.js',
+          global: 'VXETable'
+        }
+      ]
     })
   ],
   stats: {

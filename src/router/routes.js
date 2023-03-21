@@ -40,10 +40,27 @@ export const route = [
     component: () => import('../views/employee/ContractManage.vue')
   },
   {
-    name: 'MicroApp',
-    text: '车辆管理',
-    parent: 'Card',
-    path: '/microApp/:all(.*)*',
+    text: '用车管理',
+    name: 'CarManage',
+    path: '/microApp/CarManage/:all(.*)*',
+    group: '用车',
+    keepAlive: 'MicroApp',
+    component: () => import('../views/MicroApp.vue')
+  },
+  {
+    text: '用车记录',
+    name: 'CarLog',
+    path: '/microApp/CarLog/:all(.*)*',
+    group: '用车',
+    keepAlive: 'MicroApp',
+    component: () => import('../views/MicroApp.vue')
+  },
+  {
+    text: '请求评论',
+    name: 'RequestReview',
+    path: '/microApp/RequestReview/:all(.*)*',
+    group: '用车',
+    keepAlive: 'MicroApp',
     component: () => import('../views/MicroApp.vue')
   }
 ]

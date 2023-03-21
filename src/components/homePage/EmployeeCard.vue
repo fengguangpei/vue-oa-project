@@ -63,7 +63,7 @@ const employees = reactive([
 ])
 const redirectDetail = () => {
   $router.push({
-    path: '/microApp/CarManage'
+    path: '/microApp/CarManage/123'
   })
 }
 </script>
@@ -73,14 +73,17 @@ const redirectDetail = () => {
   padding: 20px;
   border: 1px solid #e2e2e2;
   background-color: #fff;
+
   &-title {
     color: #0b1019;
     font-weight: 600;
   }
+
   &-box {
     display: flex;
     margin-top: 30px;
   }
+
   &-item {
     flex: 1;
     border: 1px solid #f2f2f2;
@@ -92,6 +95,7 @@ const redirectDetail = () => {
     position: relative;
     border-radius: 4px;
     cursor: pointer;
+
     .icon {
       width: 40px;
       height: 40px;
@@ -102,21 +106,25 @@ const redirectDetail = () => {
       line-height: 40px;
       text-align: center;
       color: #fff;
+
       .iconfont {
         font-size: 22px;
       }
     }
+
     .count {
       color: #333;
       font-size: 24px;
       font-weight: 600;
     }
+
     .name {
       line-height: 32px;
       font-size: 12px;
       color: #999;
     }
   }
+
   &-item + &-item {
     margin-left: 20px;
   }

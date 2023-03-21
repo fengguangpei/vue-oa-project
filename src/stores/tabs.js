@@ -48,8 +48,8 @@ export const useTabsStore = defineStore('tabs', () => {
     return tabs.map((item) => item.keepAlive).filter((item) => item !== excludeTab.value)
   })
   // 切换
-  const changeTab = (path) => {
-    const item = tabs.find((item) => item.path === path)
+  const changeTab = (name) => {
+    const item = tabs.find((item) => item.name === name)
     if (item) {
       activeName.value = item.name
     }
@@ -69,10 +69,10 @@ export const useTabsStore = defineStore('tabs', () => {
     }
   }
   // 新增
-  const addTab = (path) => {
-    const menuItem = menuItems.find((item) => item.path === path)
-    const index = tabs.findIndex((item) => item.path === path)
-    index === -1 && tabs.push({ ...menuItem })
+  const addTab = (name, fullPath) => {
+    const menuItem = menuItems.find((item) => item.name === name)
+    const index = tabs.findIndex((item) => item.name === name)
+    index === -1 && tabs.push({ ...menuItem, path: fullPath })
   }
   // 修改excludeTab
   const changeExcludeTab = (keepAlive) => {

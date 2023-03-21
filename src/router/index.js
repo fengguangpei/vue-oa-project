@@ -6,6 +6,7 @@ import { loadMicroApp } from 'qiankun'
 const routes = [
   {
     path: '/login',
+    name: 'Login',
     component: () => import('../views/Login.vue')
   },
   {
@@ -14,6 +15,7 @@ const routes = [
     children: [
       {
         path: '/',
+        name: 'HomePage',
         component: () => import('../views/HomePage.vue')
       },
       ...route
@@ -28,9 +30,11 @@ router.onError((err) => {
   // eslint-disable-next-line no-console
   console.error(err)
 })
+
 /** 全局路由前置钩子 */
 router.beforeEach((to, from, next) => {
-  const path = to.path
+  const { name, path, fullPath } = to
+  // 刷新路由
   if (path.includes('RefreshPage')) {
     next()
     return
@@ -38,9 +42,10 @@ router.beforeEach((to, from, next) => {
   next()
   const tabsInstance = useTabsStore()
   const { addTab, changeTab } = tabsInstance
-  addTab(path)
-  changeTab(path)
+  addTab(name, fullPath)
+  changeTab(name)
 })
+
 /** 全局路由后置钩子 */
 router.afterEach((to) => {
   to.path.includes('microApp') && initMicroApp()
@@ -67,12 +72,10 @@ async function initMicroApp() {
       container: document.querySelector('#micro-app1')
     })
     await microApp.mountPromise
-    microApp.update({
-      $rootRouter: router
-    })
     flag = 'mounted'
   }
 }
+
 // 卸载子应用Vue实例
 async function unmountMicroApp() {
   const tabsInstance = useTabsStore()

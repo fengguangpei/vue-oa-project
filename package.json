@@ -34,6 +34,7 @@
     "eslint-plugin-vue": "^9.8.0",
     "eslint-webpack-plugin": "^3.2.0",
     "html-loader": "^4.2.0",
+    "html-webpack-externals-plugin": "^3.8.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.4",
@@ -76,6 +77,7 @@
     "qiankun": "^2.8.4",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
+    "vxe-table": "^4.3.10",
     "xe-utils": "^3.5.7"
   }
 }
