@@ -13,12 +13,11 @@ const routes = [
     path: '/',
     component: Frame,
     children: [
+      ...route,
       {
-        path: '/',
-        name: 'HomePage',
-        component: () => import('../views/HomePage.vue')
-      },
-      ...route
+        path: '/:all(.*)*',
+        component: () => import('../views/MicroApp.vue')
+      }
     ]
   }
 ]
@@ -48,7 +47,7 @@ router.beforeEach((to, from, next) => {
 
 /** 全局路由后置钩子 */
 router.afterEach((to) => {
-  to.path.includes('microApp') && initMicroApp()
+  to.meta.microApp && initMicroApp()
   flag === 'mounted' && unmountMicroApp()
 })
 
@@ -72,6 +71,9 @@ async function initMicroApp() {
       container: document.querySelector('#micro-app1')
     })
     await microApp.mountPromise
+    microApp.update({
+      $rootRouter: router
+    })
     flag = 'mounted'
   }
 }

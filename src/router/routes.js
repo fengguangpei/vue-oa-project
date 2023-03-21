@@ -42,25 +42,34 @@ export const route = [
   {
     text: '用车管理',
     name: 'CarManage',
-    path: '/microApp/CarManage/:all(.*)*',
+    path: '/CarManage/:all(.*)*',
     group: '用车',
     keepAlive: 'MicroApp',
+    meta: {
+      microApp: true
+    },
     component: () => import('../views/MicroApp.vue')
   },
   {
     text: '用车记录',
     name: 'CarLog',
-    path: '/microApp/CarLog/:all(.*)*',
+    path: '/CarLog/:all(.*)*',
     group: '用车',
     keepAlive: 'MicroApp',
+    meta: {
+      microApp: true
+    },
     component: () => import('../views/MicroApp.vue')
   },
   {
     text: '请求评论',
     name: 'RequestReview',
-    path: '/microApp/RequestReview/:all(.*)*',
+    path: '/RequestReview/:all(.*)*',
     group: '用车',
     keepAlive: 'MicroApp',
+    meta: {
+      microApp: true
+    },
     component: () => import('../views/MicroApp.vue')
   }
 ]

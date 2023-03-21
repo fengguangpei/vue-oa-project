@@ -63,7 +63,7 @@ const employees = reactive([
 ])
 const redirectDetail = () => {
   $router.push({
-    path: '/microApp/CarManage/123'
+    path: '/CarManage/123'
   })
 }
 </script>
