@@ -161,7 +161,7 @@ const { focusTab, menu, aside, showMenu } = storeToRefs(menusInstance)
 
   .collapse-enter-active,
   .collapse-leave-active {
-    transition: transform 0.3s linear;
+    transition: transform 0.2s linear;
   }
 
   .collapse-enter-from {

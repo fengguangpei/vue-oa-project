@@ -1,5 +1,5 @@
 {
-  "name": "webpackstudy",
+  "name": "oa",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -71,6 +71,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/runtime": "^7.20.1",
     "@element-plus/icons-vue": "^2.0.10",
+    "@vueuse/core": "^9.13.0",
     "babel-loader": "^9.1.0",
     "element-plus": "^2.2.25",
     "pinia": "^2.0.27",

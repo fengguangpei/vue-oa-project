@@ -47,7 +47,11 @@ router.beforeEach((to, from, next) => {
 
 /** 全局路由后置钩子 */
 router.afterEach((to) => {
-  to.meta.microApp && initMicroApp()
+  if (to.meta.microApp) {
+    requestAnimationFrame(() => {
+      initMicroApp()
+    })
+  }
   flag === 'mounted' && unmountMicroApp()
 })
 
