@@ -9,7 +9,10 @@ import 'vxe-table/lib/style.css'
 import { VXETable, Column, Table } from 'vxe-table'
 import globalProperties from './assets/js/globalProperties.js'
 import { prefetchApps } from 'qiankun'
+import vTip from './directives/vTip.js'
+// eslint-disable-next-line no-console
 const app = createApp(App)
+app.directive('tip', vTip)
 // pinia
 const pinia = createPinia()
 pinia.use((store) => {

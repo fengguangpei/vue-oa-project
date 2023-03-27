@@ -1,7 +1,7 @@
 <template>
   <!-- 员工概况 -->
   <div class="employee">
-    <div class="employee-title">员工概况</div>
+    <div class="employee-title twoLines" v-tip>员工概括</div>
     <div class="employee-box">
       <div v-for="item of employees" :key="item.name" class="employee-item" @click="redirectDetail">
         <div class="icon" :style="{ 'background-color': item.color }">
@@ -75,6 +75,8 @@ const redirectDetail = () => {
   background-color: #fff;
 
   &-title {
+    width: 100px;
+    line-height: 18px;
     color: #0b1019;
     font-weight: 600;
   }

@@ -6,9 +6,11 @@
     height: #{$i}px !important;
   }
 }
+
 .oa-height-100p {
   height: 100%;
 }
+
 .oa-width-100p {
   width: 100%;
 }
@@ -34,25 +36,32 @@
     margin-bottom: #{$i}px !important;
   }
 }
+
 .oa-pointer {
   cursor: pointer !important;
 }
+
 .oa-flex {
   display: flex;
 }
+
 .oa-flex-column {
   display: flex;
   flex-direction: column;
 }
+
 .oa-primary-color {
   color: #2561ef;
 }
+
 .oa-warning-color {
   color: var(--el-color-warning);
 }
+
 .oa-success-color {
   color: var(--el-color-success);
 }
+
 .oa-danger-color {
   color: var(--el-color-danger);
 }

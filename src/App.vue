@@ -2,6 +2,13 @@
   <el-config-provider :locale="locale">
     <router-view></router-view>
   </el-config-provider>
+  <!-- v-tip容器 -->
+  <div id="v-tip">
+    <el-icon>
+      <IEpCaretTop></IEpCaretTop>
+    </el-icon>
+  </div>
+  <div id="v-text"></div>
 </template>
 
 <script setup>
