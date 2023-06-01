@@ -2,7 +2,7 @@
   <div class="organization oa-width-100p oa-height-100p oa-flex-column">
     <!-- 操作 -->
     <div class="operatr-section">
-      <el-button plain> 新增下级组织 </el-button>
+      <el-button plain @click="quit"> 新增下级组织 </el-button>
       <el-dropdown class="oa-mg-left-8" trigger="click">
         <el-button plain> 批量操作 </el-button>
         <template #dropdown>
@@ -75,52 +75,6 @@
 
 <script setup>
 import { reactive } from 'vue'
-const tableData = reactive([
-  {
-    name: '深圳市XX科技股份有限公司',
-    code: 'GS1000',
-    type: '公司',
-    principal: 'xxx',
-    number: '1000',
-    status: 1
-  },
-  {
-    name: '深圳总部',
-    code: 'GS1100',
-    type: '公司',
-    principal: 'xxx',
-    number: '1000',
-    status: 1,
-    parentCode: 'GS1000'
-  },
-  {
-    name: '广州分部',
-    code: 'GS1200',
-    type: '公司',
-    principal: 'xxx',
-    number: '1000',
-    status: 1,
-    parentCode: 'GS1000'
-  },
-  {
-    name: '上海分部',
-    code: 'GS1300',
-    type: '公司',
-    principal: 'xxx',
-    number: '1000',
-    status: 1,
-    parentCode: 'GS1000'
-  },
-  {
-    name: '北京分部',
-    code: 'GS1400',
-    type: '公司',
-    principal: 'xxx',
-    number: '1000',
-    status: 1,
-    parentCode: 'GS1000'
-  }
-])
 </script>
 
 <style scoped lang="scss"></style>

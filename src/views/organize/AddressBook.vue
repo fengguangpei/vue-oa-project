@@ -1,13 +1,23 @@
 <script setup>
 import { ref } from 'vue'
-const name = ref('AddressBook')
+const number = ref(0)
+window.VERSIONS.onUpdateNumber((_event, step) => {
+  number.value = number.value + step
+})
 </script>
 
 <template>
-  <div>
-    address-book
-    <el-input v-model="name"></el-input>
+  <div class="counter">
+    <h1>Number: {{ number }}</h1>
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.counter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>

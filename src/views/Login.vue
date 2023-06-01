@@ -2,7 +2,7 @@
   <div class="login">
     <div class="form">
       <div class="form-inner">
-        <img src="../assets/images/favicon.png" alt="" />
+        <img src="../assets/images/login.png" alt="" />
         <span class="tip1">登录</span>
         <span class="tip2">欢迎登录OA办公后台管理系统</span>
         <el-form :model="formData" :rules="formRules" ref="formInstance">

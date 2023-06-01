@@ -243,3 +243,9 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: red;
+  }
+}
