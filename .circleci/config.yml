@@ -8,7 +8,7 @@ executors:
       - image: 'cypress/browsers:node16.14.0-chrome99-ff97'
 
 orbs:
-  node: circleci/node@5
+  node: circleci/node@16
   cypress: cypress-io/cypress@2.1.0
 
 # Define a job to be invoked later in a workflow.
@@ -26,8 +26,11 @@ jobs:
       # - node/install-packages:
       #  pkg-manager: 'npm'
       - run:
+        name: install
+        command: npm run install
+      - run:
         name: build
-        command: echo "Hello World"
+        command: npm run build
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
