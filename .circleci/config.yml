@@ -26,9 +26,6 @@ jobs:
       - node/install-packages:
         pkg-manager: 'npm'
       - run:
-        name: install packages
-        command: npm install
-      - run:
         name: build
         command: npm run build
 
