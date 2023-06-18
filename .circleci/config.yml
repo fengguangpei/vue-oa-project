@@ -3,7 +3,7 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@16
+  node: circleci/node@5.0.2
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
@@ -17,10 +17,10 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
-        pkg-manager: npm
+          pkg-manager: npm
       - run:
-        name: build
-        command: npm run build
+          name: build
+          command: npm run build
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
