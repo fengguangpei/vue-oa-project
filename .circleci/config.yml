@@ -23,9 +23,14 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
-      - node/install-packages
-        pkg-manager: "npm"
-      - run: npm install & npm run build
+      - node/install-packages:
+        pkg-manager: 'npm'
+      - run:
+        name: install packages
+        command: npm install
+      - run:
+        name: build
+        command: npm run build
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
