@@ -1,9 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 const number = ref(0)
-window.VERSIONS.onUpdateNumber((_event, step) => {
-  number.value = number.value + step
-})
 </script>
 
 <template>
