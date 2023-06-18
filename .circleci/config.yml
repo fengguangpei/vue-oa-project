@@ -2,14 +2,8 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
-executors:
-  node-cypress:
-    docker:
-      - image: 'cypress/browsers:node16.14.0-chrome99-ff97'
-
 orbs:
   node: circleci/node@16
-  cypress: cypress-io/cypress@2.1.0
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
@@ -17,17 +11,13 @@ jobs:
   say-hello:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
-    docker:
-      - image: cimg/node:16.16
+    executor: node/default
     # Add steps to the job
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
-      # - node/install-packages:
-      #  pkg-manager: 'npm'
-      - run:
-        name: install
-        command: npm run install
+      - node/install-packages:
+        pkg-manager: npm
       - run:
         name: build
         command: npm run build
