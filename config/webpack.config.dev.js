@@ -21,11 +21,11 @@ const config = merge(base, {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
         test: /\.s[ac]ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
       }
     ]
   },
@@ -35,12 +35,13 @@ const config = merge(base, {
       context: path.resolve(__dirname, '../src')
     }),
     new webpack.DefinePlugin({
-      PRODUCTION: JSON.stringify(false)
+      PRODUCTION: JSON.stringify(false),
+      COMPILE_MODULE: JSON.stringify(['card'])
     }),
-    new webpack.DllReferencePlugin({
-      context: path.resolve(__dirname, '../'),
-      manifest: require('../vendor/Vendor_manifest.json')
-    })
+    // new webpack.DllReferencePlugin({
+    //   context: path.resolve(__dirname, '../'),
+    //   manifest: require('../vendor/Vendor_manifest.json')
+    // })
   ]
 })
 module.exports = config

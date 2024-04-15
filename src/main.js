@@ -8,9 +8,8 @@ import './assets/scss/base.scss'
 import 'vxe-table/lib/style.css'
 import { VXETable, Column, Table } from 'vxe-table'
 import globalProperties from './assets/js/globalProperties.js'
-import { prefetchApps } from 'qiankun'
+// import { prefetchApps, registerMicroApps } from 'qiankun'
 import vTip from './directives/vTip.js'
-// eslint-disable-next-line no-console
 const app = createApp(App)
 app.directive('tip', vTip)
 // pinia
@@ -28,5 +27,22 @@ Object.entries(globalProperties).forEach(([key, value]) => {
 })
 app.use(router).use(pinia).use(useTable).mount('#app')
 app.component(RefreshPage)
-const microAppEntry = PRODUCTION ? '/microApp' : '//localhost:8081'
-prefetchApps([{ name: 'micro-app', entry: microAppEntry }])
+// const microAppEntry = PRODUCTION ? '/microApp' : '//localhost:8081'
+// prefetchApps([{ name: 'micro-app', entry: microAppEntry }])
+document.addEventListener('touchstart', function (event) {
+  if (event.touches.length > 1) {
+    event.preventDefault()
+  }
+})
+var lastTouchEnd = 0
+document.addEventListener(
+  'touchend',
+  function (event) {
+    var now = new Date().getTime()
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault()
+    }
+    lastTouchEnd = now
+  },
+  false
+)

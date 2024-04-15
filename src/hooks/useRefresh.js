@@ -18,11 +18,11 @@ function useReshPage() {
     const path = $route.fullPath
     const keepAlive = map.get(name)
     changeExcludeTab(keepAlive)
-    $router.replace({ path: '/RefreshPage' })
-    requestAnimationFrame(() => {
-      changeExcludeTab('')
-      $router.replace({ path })
-    })
+    // $router.replace({ path: '/RefreshPage' })
+    // requestAnimationFrame(() => {
+    //   changeExcludeTab('')
+    //   $router.replace({ path })
+    // })
   }
 }
 export default useReshPage

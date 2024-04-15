@@ -1,3 +1,12 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: content-box;
+}
+
 #search-section {
   padding: 10px 20px 2px;
   background-color: #fff;
@@ -242,10 +251,4 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    color: red;
-  }
 }

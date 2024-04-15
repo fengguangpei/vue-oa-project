@@ -7,6 +7,7 @@
         v-for="item of aside"
         :key="item.name"
         :class="{
+          group: true,
           'aside-item': true,
           'aside-item__active': item.name === (showMenu ? focusTab : activeAside)
         }"
@@ -43,7 +44,7 @@
           </keep-alive>
         </router-view>
         <!-- 微应用 -->
-        <div id="micro-app1" v-show="activeAside === 'Card'"></div>
+        <div id="micro-one" class="oa-width-100p oa-height-100p" v-show="activeAside === 'Card'"></div>
       </div>
       <div class="mask" v-show="showMenu" @click.stop="changeMenu(false)"></div>
     </div>
@@ -55,6 +56,7 @@ import Tabs from './Tabs.vue'
 import { useMenusStore } from '../stores/menus.js'
 import { useTabsStore } from '../stores/tabs.js'
 import { storeToRefs } from 'pinia'
+import { onUpdated } from 'vue'
 
 const menusInstance = useMenusStore()
 const tabsInstance = useTabsStore()
@@ -73,7 +75,8 @@ const { focusTab, menu, aside, showMenu } = storeToRefs(menusInstance)
   .aside {
     width: 56px;
     height: 100vh;
-    background-color: #0b1019;
+    // background-color: #0b1019;
+    @apply bg-[#0b1019];
     z-index: 9999;
 
     img {

@@ -72,7 +72,7 @@ async function initMicroApp() {
     microApp = loadMicroApp({
       name: 'micro-app',
       entry,
-      container: document.querySelector('#micro-app1')
+      container: '#micro-one'
     })
     await microApp.mountPromise
     microApp.update({
